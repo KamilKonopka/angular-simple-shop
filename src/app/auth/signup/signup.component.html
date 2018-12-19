@@ -18,7 +18,7 @@
                         class="form-control"
                         ngModel>
             </div>
-            <button class="btn btn-primary">Sign Up</button>
+            <button class="btn btn-primary" [disabled]="!f.valid">Sign Up</button>
         </form>
     </div>
 </div>
