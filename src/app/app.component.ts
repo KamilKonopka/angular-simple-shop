@@ -10,8 +10,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     firebase.initializeApp({
-      apiKey: 'AIzaSyCDQ1yo1tECARVlf6iJVbazSBSO9ELlgxM',
-      authDomain: 'reservation-system-199118.firebaseapp.com',
+      apiKey: 'AIzaSyBi7PHboS7R2G76NCJ0fZrQscorWx7oN6o',
+      authDomain: 'testing-app-31036.firebaseapp.com'
     });
   }
 }
