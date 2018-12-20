@@ -18,7 +18,7 @@ export class DataStorageService {
     ) {}
 
     storeRecipes() {
-        const token =  this.authService.getToken();
+
         // return this.http.put(
         //     'https://testing-app-31036.firebaseio.com/recipes.json',
         //     this.recipeService.getRecipes(),
@@ -27,17 +27,14 @@ export class DataStorageService {
         const request = new HttpRequest(
             'PUT',
             'https://testing-app-31036.firebaseio.com/recipes.json',
-            this.recipeService.getRecipes(),
-            {params: new HttpParams().set('auth', token), reportProgress: true}
+            this.recipeService.getRecipes()
         );
         return this.http.request(request);
     }
 
     getRecipes() {
-        const token =  this.authService.getToken();
         this.http.get<Recipe[]>(
-            'https://testing-app-31036.firebaseio.com/recipes.json' + token,
-            {params: new HttpParams().set('auth', token)})
+            'https://testing-app-31036.firebaseio.com/recipes.json')
             .pipe(
                 map((recipes) => {
                     for (const recipe of recipes) {
