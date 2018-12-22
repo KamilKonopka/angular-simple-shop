@@ -10,7 +10,8 @@ import {Router} from '@angular/router';
 export class AuthEffects {
     @Effect()
     authSignup = this.actions$
-        .pipe(ofType(AuthActions.TRY_SIGNUP),
+        .pipe(
+            ofType(AuthActions.TRY_SIGNUP),
             map(
                 (action: AuthActions.TrySignup) => {
                     return action.payload;
